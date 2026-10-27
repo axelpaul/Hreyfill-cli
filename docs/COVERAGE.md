@@ -72,3 +72,18 @@
 ## Read/write semantics
 
 Quote POST is read-only. SMS validation GET changes authentication. Payment-window creation and check/failure callbacks are classified write operations because the callback can finalize payment enrollment. Both WebSocket streams send the existing access token in Authorization; nearby sends `center: [latitude, longitude]` after connection. Favourite-address removal uses the same address/set route with an empty typed Address, not a made-up DELETE route.
+
+## Catalogue and installation conventions
+
+- `mcp-catalog.json` is schema-validated and compared with a real writes-enabled
+  stdio tools/list on every `bun run check` (20 read / 16 write tools).
+- Login, signup and SMS operations remain CLI-only. Every MCP write has required
+  boolean `confirm`; missing/false/nonboolean inputs cannot execute.
+- GitHub global source installation was exercised in isolated temporary Bun
+  global/bin/cache directories, including the executable/shebang, package version,
+  installed MCP handshake/list and subsequent uninstall. The regular local global
+  command was not replaced.
+- Version remains 0.1.0; no release tag has been created. Non-Linux binaries and
+  the actual release upload have not been runtime-tested here.
+- The optional site notification needs SITE_DISPATCH_TOKEN; absent that secret,
+  hourly topic-based discovery remains the mechanism.

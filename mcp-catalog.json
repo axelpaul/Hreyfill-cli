@@ -6,7 +6,7 @@
   "service": "Hreyfill",
   "serviceUrl": "https://www.hreyfill.is",
   "tagline": "Taxi quotes, nearby cars and bookings with Hreyfill",
-  "description": "Check taxi prices, nearby cars and your bookings with your existing Hreyfill app login. You can also prepare bookings and cancellations, but these actions have not yet been tested with a real booking.",
+  "description": "Check taxi prices, nearby taxis and your bookings with your existing Hreyfill app login. Booking and cancellation features are experimental and require explicit confirmation.",
   "examples": [
     "How much would this taxi journey cost?",
     "What bookings do I have coming up?",
@@ -249,7 +249,7 @@
   ],
   "is": {
     "tagline": "Verð fyrir leigubílaferðir, bílar í nágrenninu og bókanir hjá Hreyfli",
-    "description": "Skoðaðu verð fyrir ferð, leigubíla í nágrenninu og bókanirnar þínar með innskráningu úr Hreyfilsappinu. Þú getur líka undirbúið bókanir og afbókanir, en þær aðgerðir hafa ekki enn verið prófaðar með raunverulegri bókun.",
+    "description": "Skoðaðu verð fyrir ferð, leigubíla í nágrenninu og bókanirnar þínar með innskráningu úr Hreyfilsappinu. Bókanir og afbókanir eru enn á tilraunastigi og krefjast sérstakrar staðfestingar.",
     "examples": [
       "Hvað myndi þessi leigubílaferð kosta?",
       "Hvaða ferðir á ég bókaðar fram undan?",
