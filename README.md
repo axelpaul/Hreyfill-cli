@@ -7,6 +7,8 @@ Unofficial local TypeScript/Bun client for **Frogne Taxi Hreyfill**
 ## Install / build
 
 ```sh
+git clone https://github.com/axelpaul/Hreyfill-cli.git
+cd Hreyfill-cli
 bun install --frozen-lockfile
 bun run check
 bun run build
