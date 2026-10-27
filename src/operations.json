@@ -1,0 +1,2546 @@
+[
+  {
+    "name": "get-quote",
+    "description": "getQuote — read operation from Frogne Hreyfill 3.8.3; read-only operation.",
+    "effect": "read",
+    "method": "POST",
+    "path": "https://infinity.frogne.dk/isl/v1/quote/get",
+    "paramsSchema": {
+      "type": "object",
+      "properties": {},
+      "required": [],
+      "additionalProperties": false
+    },
+    "source": "dk.frogne.booking.infinity.data.network.api.QuoteApi.java",
+    "requestModel": "QuoteGetParameters",
+    "coverage": "static-contract",
+    "authRequired": true,
+    "bodySchema": {
+      "type": "object",
+      "properties": {
+        "addresses": {
+          "type": "object",
+          "properties": {
+            "destination": {
+              "type": "object",
+              "properties": {
+                "city": {
+                  "anyOf": [
+                    {
+                      "type": "string"
+                    },
+                    {
+                      "type": "null"
+                    }
+                  ]
+                },
+                "coord": {
+                  "type": "array",
+                  "items": {
+                    "type": "number"
+                  },
+                  "minItems": 2,
+                  "maxItems": 2
+                },
+                "country": {
+                  "anyOf": [
+                    {
+                      "type": "string"
+                    },
+                    {
+                      "type": "null"
+                    }
+                  ]
+                },
+                "countryCode": {
+                  "anyOf": [
+                    {
+                      "type": "string"
+                    },
+                    {
+                      "type": "null"
+                    }
+                  ]
+                },
+                "flightId": {
+                  "anyOf": [
+                    {
+                      "type": "string"
+                    },
+                    {
+                      "type": "null"
+                    }
+                  ]
+                },
+                "houseNum": {
+                  "anyOf": [
+                    {
+                      "type": "string"
+                    },
+                    {
+                      "type": "null"
+                    }
+                  ]
+                },
+                "label": {
+                  "anyOf": [
+                    {
+                      "type": "string"
+                    },
+                    {
+                      "type": "null"
+                    }
+                  ]
+                },
+                "letter": {
+                  "anyOf": [
+                    {
+                      "type": "string"
+                    },
+                    {
+                      "type": "null"
+                    }
+                  ]
+                },
+                "poi": {
+                  "anyOf": [
+                    {
+                      "type": "string"
+                    },
+                    {
+                      "type": "null"
+                    }
+                  ]
+                },
+                "specialCaseComment": {
+                  "anyOf": [
+                    {
+                      "type": "string"
+                    },
+                    {
+                      "type": "null"
+                    }
+                  ]
+                },
+                "street": {
+                  "anyOf": [
+                    {
+                      "type": "string"
+                    },
+                    {
+                      "type": "null"
+                    }
+                  ]
+                },
+                "type": {
+                  "anyOf": [
+                    {
+                      "type": "string"
+                    },
+                    {
+                      "type": "null"
+                    }
+                  ]
+                },
+                "zipCode": {
+                  "anyOf": [
+                    {
+                      "type": "string"
+                    },
+                    {
+                      "type": "null"
+                    }
+                  ]
+                }
+              },
+              "additionalProperties": false,
+              "required": [
+                "coord"
+              ]
+            },
+            "pickup": {
+              "type": "object",
+              "properties": {
+                "city": {
+                  "anyOf": [
+                    {
+                      "type": "string"
+                    },
+                    {
+                      "type": "null"
+                    }
+                  ]
+                },
+                "coord": {
+                  "type": "array",
+                  "items": {
+                    "type": "number"
+                  },
+                  "minItems": 2,
+                  "maxItems": 2
+                },
+                "country": {
+                  "anyOf": [
+                    {
+                      "type": "string"
+                    },
+                    {
+                      "type": "null"
+                    }
+                  ]
+                },
+                "countryCode": {
+                  "anyOf": [
+                    {
+                      "type": "string"
+                    },
+                    {
+                      "type": "null"
+                    }
+                  ]
+                },
+                "flightId": {
+                  "anyOf": [
+                    {
+                      "type": "string"
+                    },
+                    {
+                      "type": "null"
+                    }
+                  ]
+                },
+                "houseNum": {
+                  "anyOf": [
+                    {
+                      "type": "string"
+                    },
+                    {
+                      "type": "null"
+                    }
+                  ]
+                },
+                "label": {
+                  "anyOf": [
+                    {
+                      "type": "string"
+                    },
+                    {
+                      "type": "null"
+                    }
+                  ]
+                },
+                "letter": {
+                  "anyOf": [
+                    {
+                      "type": "string"
+                    },
+                    {
+                      "type": "null"
+                    }
+                  ]
+                },
+                "poi": {
+                  "anyOf": [
+                    {
+                      "type": "string"
+                    },
+                    {
+                      "type": "null"
+                    }
+                  ]
+                },
+                "specialCaseComment": {
+                  "anyOf": [
+                    {
+                      "type": "string"
+                    },
+                    {
+                      "type": "null"
+                    }
+                  ]
+                },
+                "street": {
+                  "anyOf": [
+                    {
+                      "type": "string"
+                    },
+                    {
+                      "type": "null"
+                    }
+                  ]
+                },
+                "type": {
+                  "anyOf": [
+                    {
+                      "type": "string"
+                    },
+                    {
+                      "type": "null"
+                    }
+                  ]
+                },
+                "zipCode": {
+                  "anyOf": [
+                    {
+                      "type": "string"
+                    },
+                    {
+                      "type": "null"
+                    }
+                  ]
+                }
+              },
+              "additionalProperties": false,
+              "required": [
+                "coord"
+              ]
+            },
+            "via": {
+              "anyOf": [
+                {
+                  "type": "object",
+                  "properties": {
+                    "city": {
+                      "anyOf": [
+                        {
+                          "type": "string"
+                        },
+                        {
+                          "type": "null"
+                        }
+                      ]
+                    },
+                    "coord": {
+                      "type": "array",
+                      "items": {
+                        "type": "number"
+                      },
+                      "minItems": 2,
+                      "maxItems": 2
+                    },
+                    "country": {
+                      "anyOf": [
+                        {
+                          "type": "string"
+                        },
+                        {
+                          "type": "null"
+                        }
+                      ]
+                    },
+                    "countryCode": {
+                      "anyOf": [
+                        {
+                          "type": "string"
+                        },
+                        {
+                          "type": "null"
+                        }
+                      ]
+                    },
+                    "flightId": {
+                      "anyOf": [
+                        {
+                          "type": "string"
+                        },
+                        {
+                          "type": "null"
+                        }
+                      ]
+                    },
+                    "houseNum": {
+                      "anyOf": [
+                        {
+                          "type": "string"
+                        },
+                        {
+                          "type": "null"
+                        }
+                      ]
+                    },
+                    "label": {
+                      "anyOf": [
+                        {
+                          "type": "string"
+                        },
+                        {
+                          "type": "null"
+                        }
+                      ]
+                    },
+                    "letter": {
+                      "anyOf": [
+                        {
+                          "type": "string"
+                        },
+                        {
+                          "type": "null"
+                        }
+                      ]
+                    },
+                    "poi": {
+                      "anyOf": [
+                        {
+                          "type": "string"
+                        },
+                        {
+                          "type": "null"
+                        }
+                      ]
+                    },
+                    "specialCaseComment": {
+                      "anyOf": [
+                        {
+                          "type": "string"
+                        },
+                        {
+                          "type": "null"
+                        }
+                      ]
+                    },
+                    "street": {
+                      "anyOf": [
+                        {
+                          "type": "string"
+                        },
+                        {
+                          "type": "null"
+                        }
+                      ]
+                    },
+                    "type": {
+                      "anyOf": [
+                        {
+                          "type": "string"
+                        },
+                        {
+                          "type": "null"
+                        }
+                      ]
+                    },
+                    "zipCode": {
+                      "anyOf": [
+                        {
+                          "type": "string"
+                        },
+                        {
+                          "type": "null"
+                        }
+                      ]
+                    }
+                  },
+                  "additionalProperties": false,
+                  "required": [
+                    "coord"
+                  ]
+                },
+                {
+                  "type": "null"
+                }
+              ]
+            }
+          },
+          "additionalProperties": false,
+          "required": [
+            "pickup",
+            "destination"
+          ]
+        },
+        "attributes": {
+          "anyOf": [
+            {
+              "type": "array",
+              "items": {
+                "type": "string"
+              }
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "comment": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "estServiceTimeUI": {
+          "type": "integer"
+        },
+        "estTripTimeUI": {
+          "type": "integer"
+        },
+        "numPassengers": {
+          "type": "integer",
+          "minimum": 1,
+          "maximum": 100
+        },
+        "payment": {
+          "anyOf": [
+            {
+              "type": "object",
+              "additionalProperties": true
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "phoneId": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "pickupTime": {
+          "type": "string",
+          "pattern": "^\\d{4}-\\d{2}-\\d{2}T\\d{2}:\\d{2}:\\d{2}(?:\\.\\d+)?Z$"
+        },
+        "preferredCompany": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "process": {
+          "anyOf": [
+            {
+              "type": "object",
+              "properties": {
+                "allowRouting": {
+                  "type": "boolean"
+                },
+                "manual": {
+                  "type": "boolean"
+                },
+                "urgent": {
+                  "type": "boolean"
+                }
+              },
+              "additionalProperties": false
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "quote": {
+          "anyOf": [
+            {
+              "type": "object",
+              "additionalProperties": true
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "quoteType": {
+          "type": "string",
+          "enum": [
+            "fixedPrice",
+            "maxPrice"
+          ]
+        },
+        "references": {
+          "anyOf": [
+            {
+              "type": "object",
+              "additionalProperties": true
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "vehicle": {
+          "anyOf": [
+            {
+              "type": "object",
+              "properties": {
+                "coord": {
+                  "anyOf": [
+                    {
+                      "type": "array",
+                      "items": {
+                        "type": "number"
+                      }
+                    },
+                    {
+                      "type": "null"
+                    }
+                  ]
+                },
+                "id": {
+                  "type": "integer"
+                },
+                "regid": {
+                  "anyOf": [
+                    {
+                      "type": "string"
+                    },
+                    {
+                      "type": "null"
+                    }
+                  ]
+                }
+              },
+              "additionalProperties": false
+            },
+            {
+              "type": "null"
+            }
+          ]
+        }
+      },
+      "additionalProperties": false,
+      "required": [
+        "addresses",
+        "pickupTime",
+        "numPassengers",
+        "quoteType"
+      ]
+    }
+  },
+  {
+    "name": "cc-auth-failed",
+    "description": "ccAuthFailed — payment-flow operation from Frogne Hreyfill 3.8.3; static contract; live write execution unverified.",
+    "effect": "write",
+    "method": "POST",
+    "path": "https://infinity.frogne.dk/isl/v1/payment/cc-authfail/{token}",
+    "paramsSchema": {
+      "type": "object",
+      "properties": {
+        "token": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 512
+        }
+      },
+      "required": [
+        "token"
+      ],
+      "additionalProperties": false
+    },
+    "source": "dk.frogne.booking.infinity.data.network.api.PaymentApi.java",
+    "requestModel": null,
+    "coverage": "static-contract",
+    "authRequired": true
+  },
+  {
+    "name": "cc-check-auth",
+    "description": "ccCheckAuth — payment-flow operation from Frogne Hreyfill 3.8.3; static contract; live write execution unverified.",
+    "effect": "write",
+    "method": "POST",
+    "path": "https://infinity.frogne.dk/isl/v1/payment/cc-checkauth/{token}",
+    "paramsSchema": {
+      "type": "object",
+      "properties": {
+        "token": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 512
+        }
+      },
+      "required": [
+        "token"
+      ],
+      "additionalProperties": false
+    },
+    "source": "dk.frogne.booking.infinity.data.network.api.PaymentApi.java",
+    "requestModel": null,
+    "coverage": "static-contract",
+    "authRequired": true
+  },
+  {
+    "name": "get-payment-windows",
+    "description": "getPaymentWindows — payment-flow operation from Frogne Hreyfill 3.8.3; static contract; live write execution unverified.",
+    "effect": "write",
+    "method": "POST",
+    "path": "https://infinity.frogne.dk/isl/v1/payment/cc-paymentwindow",
+    "paramsSchema": {
+      "type": "object",
+      "properties": {},
+      "required": [],
+      "additionalProperties": false
+    },
+    "source": "dk.frogne.booking.infinity.data.network.api.PaymentApi.java",
+    "requestModel": null,
+    "coverage": "static-contract",
+    "authRequired": true
+  },
+  {
+    "name": "get-receipt",
+    "description": "getReceipt — read operation from Frogne Hreyfill 3.8.3; read-only operation.",
+    "effect": "read",
+    "method": "GET",
+    "path": "https://infinity.frogne.dk/isl/v1/payment/receipt/pdf/{orderId}",
+    "paramsSchema": {
+      "type": "object",
+      "properties": {
+        "orderId": {
+          "type": "integer",
+          "minimum": 1
+        }
+      },
+      "required": [
+        "orderId"
+      ],
+      "additionalProperties": false
+    },
+    "source": "dk.frogne.booking.infinity.data.network.api.PaymentApi.java",
+    "requestModel": null,
+    "coverage": "static-contract",
+    "authRequired": true,
+    "responseType": "binary"
+  },
+  {
+    "name": "cancel-order",
+    "description": "cancelOrder — write operation from Frogne Hreyfill 3.8.3; static contract; live write execution unverified.",
+    "effect": "write",
+    "method": "POST",
+    "path": "https://infinity.frogne.dk/isl/v1/order/cancel/{orderId}",
+    "paramsSchema": {
+      "type": "object",
+      "properties": {
+        "orderId": {
+          "type": "integer",
+          "minimum": 1
+        }
+      },
+      "required": [
+        "orderId"
+      ],
+      "additionalProperties": false
+    },
+    "source": "dk.frogne.booking.infinity.data.network.api.OrderApi.java",
+    "requestModel": null,
+    "coverage": "static-contract",
+    "authRequired": true
+  },
+  {
+    "name": "create-order",
+    "description": "createOrder — write operation from Frogne Hreyfill 3.8.3; static contract; live write execution unverified.",
+    "effect": "write",
+    "method": "POST",
+    "path": "https://infinity.frogne.dk/isl/v1/order/create",
+    "paramsSchema": {
+      "type": "object",
+      "properties": {},
+      "required": [],
+      "additionalProperties": false
+    },
+    "source": "dk.frogne.booking.infinity.data.network.api.OrderApi.java",
+    "requestModel": "CreateOrderAttributesRequest",
+    "coverage": "static-contract",
+    "authRequired": true,
+    "bodySchema": {
+      "type": "object",
+      "properties": {
+        "addresses": {
+          "type": "object",
+          "properties": {
+            "destination": {
+              "anyOf": [
+                {
+                  "type": "object",
+                  "properties": {
+                    "city": {
+                      "anyOf": [
+                        {
+                          "type": "string"
+                        },
+                        {
+                          "type": "null"
+                        }
+                      ]
+                    },
+                    "comment": {
+                      "anyOf": [
+                        {
+                          "type": "string"
+                        },
+                        {
+                          "type": "null"
+                        }
+                      ]
+                    },
+                    "coord": {
+                      "type": "array",
+                      "items": {
+                        "type": "number"
+                      },
+                      "minItems": 2,
+                      "maxItems": 2
+                    },
+                    "country": {
+                      "anyOf": [
+                        {
+                          "type": "string"
+                        },
+                        {
+                          "type": "null"
+                        }
+                      ]
+                    },
+                    "flightId": {
+                      "anyOf": [
+                        {
+                          "type": "string"
+                        },
+                        {
+                          "type": "null"
+                        }
+                      ]
+                    },
+                    "houseNum": {
+                      "anyOf": [
+                        {
+                          "type": "string"
+                        },
+                        {
+                          "type": "null"
+                        }
+                      ]
+                    },
+                    "letter": {
+                      "anyOf": [
+                        {
+                          "type": "string"
+                        },
+                        {
+                          "type": "null"
+                        }
+                      ]
+                    },
+                    "poi": {
+                      "anyOf": [
+                        {
+                          "type": "string"
+                        },
+                        {
+                          "type": "null"
+                        }
+                      ]
+                    },
+                    "street": {
+                      "anyOf": [
+                        {
+                          "type": "string"
+                        },
+                        {
+                          "type": "null"
+                        }
+                      ]
+                    },
+                    "zipCode": {
+                      "anyOf": [
+                        {
+                          "type": "string"
+                        },
+                        {
+                          "type": "null"
+                        }
+                      ]
+                    }
+                  },
+                  "additionalProperties": false,
+                  "required": [
+                    "coord"
+                  ]
+                },
+                {
+                  "type": "null"
+                }
+              ]
+            },
+            "pickup": {
+              "type": "object",
+              "properties": {
+                "city": {
+                  "anyOf": [
+                    {
+                      "type": "string"
+                    },
+                    {
+                      "type": "null"
+                    }
+                  ]
+                },
+                "comment": {
+                  "anyOf": [
+                    {
+                      "type": "string"
+                    },
+                    {
+                      "type": "null"
+                    }
+                  ]
+                },
+                "coord": {
+                  "type": "array",
+                  "items": {
+                    "type": "number"
+                  },
+                  "minItems": 2,
+                  "maxItems": 2
+                },
+                "country": {
+                  "anyOf": [
+                    {
+                      "type": "string"
+                    },
+                    {
+                      "type": "null"
+                    }
+                  ]
+                },
+                "flightId": {
+                  "anyOf": [
+                    {
+                      "type": "string"
+                    },
+                    {
+                      "type": "null"
+                    }
+                  ]
+                },
+                "houseNum": {
+                  "anyOf": [
+                    {
+                      "type": "string"
+                    },
+                    {
+                      "type": "null"
+                    }
+                  ]
+                },
+                "letter": {
+                  "anyOf": [
+                    {
+                      "type": "string"
+                    },
+                    {
+                      "type": "null"
+                    }
+                  ]
+                },
+                "poi": {
+                  "anyOf": [
+                    {
+                      "type": "string"
+                    },
+                    {
+                      "type": "null"
+                    }
+                  ]
+                },
+                "street": {
+                  "anyOf": [
+                    {
+                      "type": "string"
+                    },
+                    {
+                      "type": "null"
+                    }
+                  ]
+                },
+                "zipCode": {
+                  "anyOf": [
+                    {
+                      "type": "string"
+                    },
+                    {
+                      "type": "null"
+                    }
+                  ]
+                }
+              },
+              "additionalProperties": false,
+              "required": [
+                "coord"
+              ]
+            },
+            "via": {
+              "anyOf": [
+                {
+                  "type": "object",
+                  "properties": {
+                    "city": {
+                      "anyOf": [
+                        {
+                          "type": "string"
+                        },
+                        {
+                          "type": "null"
+                        }
+                      ]
+                    },
+                    "comment": {
+                      "anyOf": [
+                        {
+                          "type": "string"
+                        },
+                        {
+                          "type": "null"
+                        }
+                      ]
+                    },
+                    "coord": {
+                      "type": "array",
+                      "items": {
+                        "type": "number"
+                      },
+                      "minItems": 2,
+                      "maxItems": 2
+                    },
+                    "country": {
+                      "anyOf": [
+                        {
+                          "type": "string"
+                        },
+                        {
+                          "type": "null"
+                        }
+                      ]
+                    },
+                    "flightId": {
+                      "anyOf": [
+                        {
+                          "type": "string"
+                        },
+                        {
+                          "type": "null"
+                        }
+                      ]
+                    },
+                    "houseNum": {
+                      "anyOf": [
+                        {
+                          "type": "string"
+                        },
+                        {
+                          "type": "null"
+                        }
+                      ]
+                    },
+                    "letter": {
+                      "anyOf": [
+                        {
+                          "type": "string"
+                        },
+                        {
+                          "type": "null"
+                        }
+                      ]
+                    },
+                    "poi": {
+                      "anyOf": [
+                        {
+                          "type": "string"
+                        },
+                        {
+                          "type": "null"
+                        }
+                      ]
+                    },
+                    "street": {
+                      "anyOf": [
+                        {
+                          "type": "string"
+                        },
+                        {
+                          "type": "null"
+                        }
+                      ]
+                    },
+                    "zipCode": {
+                      "anyOf": [
+                        {
+                          "type": "string"
+                        },
+                        {
+                          "type": "null"
+                        }
+                      ]
+                    }
+                  },
+                  "additionalProperties": false,
+                  "required": [
+                    "coord"
+                  ]
+                },
+                {
+                  "type": "null"
+                }
+              ]
+            }
+          },
+          "additionalProperties": false,
+          "required": [
+            "pickup"
+          ]
+        },
+        "attributes": {
+          "anyOf": [
+            {
+              "type": "array",
+              "items": {
+                "type": "string"
+              }
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "comment": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "estServiceTimeUI": {
+          "type": "integer"
+        },
+        "estTripTimeUI": {
+          "type": "integer"
+        },
+        "firebaseToken": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "numPassengers": {
+          "type": "integer",
+          "minimum": 1,
+          "maximum": 100
+        },
+        "payment": {
+          "anyOf": [
+            {
+              "type": "object",
+              "additionalProperties": true
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "phoneId": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "pickupTime": {
+          "type": "string",
+          "pattern": "^\\d{4}-\\d{2}-\\d{2}T\\d{2}:\\d{2}:\\d{2}(?:\\.\\d+)?Z$"
+        },
+        "preferredCompany": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "process": {
+          "anyOf": [
+            {
+              "type": "object",
+              "properties": {
+                "allowRouting": {
+                  "type": "boolean"
+                },
+                "manual": {
+                  "type": "boolean"
+                },
+                "urgent": {
+                  "type": "boolean"
+                }
+              },
+              "additionalProperties": false
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "quote": {
+          "anyOf": [
+            {
+              "type": "object",
+              "additionalProperties": true
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "references": {
+          "anyOf": [
+            {
+              "type": "object",
+              "additionalProperties": true
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "vehicle": {
+          "anyOf": [
+            {
+              "type": "object",
+              "properties": {
+                "coord": {
+                  "anyOf": [
+                    {
+                      "type": "array",
+                      "items": {
+                        "type": "number"
+                      }
+                    },
+                    {
+                      "type": "null"
+                    }
+                  ]
+                },
+                "id": {
+                  "type": "integer"
+                },
+                "regid": {
+                  "anyOf": [
+                    {
+                      "type": "string"
+                    },
+                    {
+                      "type": "null"
+                    }
+                  ]
+                }
+              },
+              "additionalProperties": false
+            },
+            {
+              "type": "null"
+            }
+          ]
+        }
+      },
+      "additionalProperties": false,
+      "required": [
+        "addresses",
+        "pickupTime",
+        "numPassengers"
+      ]
+    }
+  },
+  {
+    "name": "get-most-recent-order-today",
+    "description": "getMostRecentOrderToday — read operation from Frogne Hreyfill 3.8.3; read-only operation.",
+    "effect": "read",
+    "method": "GET",
+    "path": "https://infinity.frogne.dk/isl/v1/order/search/all?days=1&start=0&max=1",
+    "paramsSchema": {
+      "type": "object",
+      "properties": {},
+      "required": [],
+      "additionalProperties": false
+    },
+    "source": "dk.frogne.booking.infinity.data.network.api.OrderApi.java",
+    "requestModel": null,
+    "coverage": "static-contract",
+    "authRequired": true
+  },
+  {
+    "name": "get-order",
+    "description": "getOrder — read operation from Frogne Hreyfill 3.8.3; read-only operation.",
+    "effect": "read",
+    "method": "GET",
+    "path": "https://infinity.frogne.dk/isl/v1/order/get/{orderId}",
+    "paramsSchema": {
+      "type": "object",
+      "properties": {
+        "orderId": {
+          "type": "integer",
+          "minimum": 1
+        }
+      },
+      "required": [
+        "orderId"
+      ],
+      "additionalProperties": false
+    },
+    "source": "dk.frogne.booking.infinity.data.network.api.OrderApi.java",
+    "requestModel": null,
+    "coverage": "static-contract",
+    "authRequired": true
+  },
+  {
+    "name": "get-order-history",
+    "description": "getOrderHistory — read operation from Frogne Hreyfill 3.8.3; read-only operation.",
+    "effect": "read",
+    "method": "GET",
+    "path": "https://infinity.frogne.dk/isl/v1/order/search/all",
+    "paramsSchema": {
+      "type": "object",
+      "properties": {
+        "max": {
+          "type": "integer",
+          "minimum": 1,
+          "maximum": 1000
+        }
+      },
+      "required": [],
+      "additionalProperties": false
+    },
+    "source": "dk.frogne.booking.infinity.data.network.api.OrderApi.java",
+    "requestModel": null,
+    "coverage": "static-contract",
+    "authRequired": true
+  },
+  {
+    "name": "get-order-upcoming",
+    "description": "getOrderUpcoming — read operation from Frogne Hreyfill 3.8.3; read-only operation.",
+    "effect": "read",
+    "method": "GET",
+    "path": "https://infinity.frogne.dk/isl/v1/order/search/upcoming",
+    "paramsSchema": {
+      "type": "object",
+      "properties": {},
+      "required": [],
+      "additionalProperties": false
+    },
+    "source": "dk.frogne.booking.infinity.data.network.api.OrderApi.java",
+    "requestModel": null,
+    "coverage": "static-contract",
+    "authRequired": true
+  },
+  {
+    "name": "remove-order",
+    "description": "removeOrder — write operation from Frogne Hreyfill 3.8.3; static contract; live write execution unverified.",
+    "effect": "write",
+    "method": "POST",
+    "path": "https://infinity.frogne.dk/isl/v1/order/remove/{orderId}",
+    "paramsSchema": {
+      "type": "object",
+      "properties": {
+        "orderId": {
+          "type": "integer",
+          "minimum": 1
+        }
+      },
+      "required": [
+        "orderId"
+      ],
+      "additionalProperties": false
+    },
+    "source": "dk.frogne.booking.infinity.data.network.api.OrderApi.java",
+    "requestModel": null,
+    "coverage": "static-contract",
+    "authRequired": true
+  },
+  {
+    "name": "get-address",
+    "description": "getAddress — read operation from Frogne Hreyfill 3.8.3; read-only operation.",
+    "effect": "read",
+    "method": "GET",
+    "path": "https://maps.googleapis.com/maps/api/geocode/json",
+    "paramsSchema": {
+      "type": "object",
+      "properties": {
+        "latlng": {
+          "type": "string"
+        },
+        "language": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "latlng",
+        "language"
+      ],
+      "additionalProperties": false
+    },
+    "source": "dk.frogne.booking.infinity.data.network.api.GoogleMapsApi.java",
+    "requestModel": null,
+    "coverage": "static-contract",
+    "authRequired": false,
+    "google": true
+  },
+  {
+    "name": "get-address-details",
+    "description": "getAddressDetails — read operation from Frogne Hreyfill 3.8.3; read-only operation.",
+    "effect": "read",
+    "method": "GET",
+    "path": "https://maps.googleapis.com/maps/api/geocode/json",
+    "paramsSchema": {
+      "type": "object",
+      "properties": {
+        "place_id": {
+          "type": "string"
+        },
+        "language": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "place_id",
+        "language"
+      ],
+      "additionalProperties": false
+    },
+    "source": "dk.frogne.booking.infinity.data.network.api.GoogleMapsApi.java",
+    "requestModel": null,
+    "coverage": "static-contract",
+    "authRequired": false,
+    "google": true
+  },
+  {
+    "name": "get-autocompleted-addresses",
+    "description": "getAutocompletedAddresses — read operation from Frogne Hreyfill 3.8.3; read-only operation.",
+    "effect": "read",
+    "method": "GET",
+    "path": "https://maps.googleapis.com/maps/api/place/autocomplete/json",
+    "paramsSchema": {
+      "type": "object",
+      "properties": {
+        "input": {
+          "type": "string"
+        },
+        "language": {
+          "type": "string"
+        },
+        "components": {
+          "type": "string"
+        },
+        "radius": {
+          "type": "string"
+        },
+        "location": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "input",
+        "language",
+        "components",
+        "radius",
+        "location"
+      ],
+      "additionalProperties": false
+    },
+    "source": "dk.frogne.booking.infinity.data.network.api.GoogleMapsApi.java",
+    "requestModel": null,
+    "coverage": "static-contract",
+    "authRequired": false,
+    "google": true
+  },
+  {
+    "name": "get-autocompleted-addresses-strict",
+    "description": "getAutocompletedAddressesStrict — read operation from Frogne Hreyfill 3.8.3; read-only operation.",
+    "effect": "read",
+    "method": "GET",
+    "path": "https://maps.googleapis.com/maps/api/place/autocomplete/json",
+    "paramsSchema": {
+      "type": "object",
+      "properties": {
+        "input": {
+          "type": "string"
+        },
+        "language": {
+          "type": "string"
+        },
+        "components": {
+          "type": "string"
+        },
+        "radius": {
+          "type": "string"
+        },
+        "location": {
+          "type": "string"
+        },
+        "strictbounds": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "input",
+        "language",
+        "components",
+        "radius",
+        "location",
+        "strictbounds"
+      ],
+      "additionalProperties": false
+    },
+    "source": "dk.frogne.booking.infinity.data.network.api.GoogleMapsApi.java",
+    "requestModel": null,
+    "coverage": "static-contract",
+    "authRequired": false,
+    "google": true
+  },
+  {
+    "name": "get-directions",
+    "description": "getDirections — read operation from Frogne Hreyfill 3.8.3; read-only operation.",
+    "effect": "read",
+    "method": "GET",
+    "path": "https://maps.googleapis.com/maps/api/directions/json",
+    "paramsSchema": {
+      "type": "object",
+      "properties": {
+        "origin": {
+          "type": "string"
+        },
+        "destination": {
+          "type": "string"
+        },
+        "sensor": {
+          "type": "boolean"
+        }
+      },
+      "required": [
+        "origin",
+        "destination",
+        "sensor"
+      ],
+      "additionalProperties": false
+    },
+    "source": "dk.frogne.booking.infinity.data.network.api.GoogleMapsApi.java",
+    "requestModel": null,
+    "coverage": "static-contract",
+    "authRequired": false,
+    "google": true
+  },
+  {
+    "name": "get-places-extra-details",
+    "description": "getPlacesExtraDetails — read operation from Frogne Hreyfill 3.8.3; read-only operation.",
+    "effect": "read",
+    "method": "GET",
+    "path": "https://maps.googleapis.com/maps/api/place/details/json",
+    "paramsSchema": {
+      "type": "object",
+      "properties": {
+        "place_id": {
+          "type": "string"
+        },
+        "language": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "place_id",
+        "language"
+      ],
+      "additionalProperties": false
+    },
+    "source": "dk.frogne.booking.infinity.data.network.api.GoogleMapsApi.java",
+    "requestModel": null,
+    "coverage": "static-contract",
+    "authRequired": false,
+    "google": true
+  },
+  {
+    "name": "get-call-list",
+    "description": "getCallList — read operation from Frogne Hreyfill 3.8.3; read-only operation.",
+    "effect": "read",
+    "method": "GET",
+    "path": "https://infinity.frogne.dk/isl/web/v1/call_list.json",
+    "paramsSchema": {
+      "type": "object",
+      "properties": {},
+      "required": [],
+      "additionalProperties": false
+    },
+    "source": "dk.frogne.booking.infinity.data.network.api.CallListApi.java",
+    "requestModel": null,
+    "coverage": "static-contract",
+    "authRequired": false
+  },
+  {
+    "name": "get-transportation-options",
+    "description": "getTransportationOptions — read operation from Frogne Hreyfill 3.8.3; read-only operation.",
+    "effect": "read",
+    "method": "GET",
+    "path": "https://infinity.frogne.dk/isl/web/v1/attributes_list.json",
+    "paramsSchema": {
+      "type": "object",
+      "properties": {},
+      "required": [],
+      "additionalProperties": false
+    },
+    "source": "dk.frogne.booking.infinity.data.network.api.TransportationOptionsApi.java",
+    "requestModel": null,
+    "coverage": "static-contract",
+    "authRequired": false
+  },
+  {
+    "name": "send-login-request",
+    "description": "sendLoginRequest — auth operation from Frogne Hreyfill 3.8.3; static contract; live write execution unverified.",
+    "effect": "auth",
+    "method": "POST",
+    "path": "https://infinity.frogne.dk/isl/v1/auth/login",
+    "paramsSchema": {
+      "type": "object",
+      "properties": {},
+      "required": [],
+      "additionalProperties": false
+    },
+    "source": "dk.frogne.booking.infinity.data.network.api.FrogneAuthenticationApi.java",
+    "requestModel": "LoginRequest",
+    "coverage": "static-contract",
+    "authRequired": false,
+    "bodySchema": {
+      "type": "object",
+      "properties": {
+        "app": {
+          "anyOf": [
+            {
+              "type": "object",
+              "properties": {
+                "name": {
+                  "anyOf": [
+                    {
+                      "type": "string"
+                    },
+                    {
+                      "type": "null"
+                    }
+                  ]
+                },
+                "version": {
+                  "anyOf": [
+                    {
+                      "type": "string"
+                    },
+                    {
+                      "type": "null"
+                    }
+                  ]
+                }
+              },
+              "additionalProperties": false
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "email": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "firebaseToken": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "loginProvider": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "os": {
+          "anyOf": [
+            {
+              "type": "object",
+              "properties": {
+                "language": {
+                  "anyOf": [
+                    {
+                      "type": "string"
+                    },
+                    {
+                      "type": "null"
+                    }
+                  ]
+                },
+                "name": {
+                  "anyOf": [
+                    {
+                      "type": "string"
+                    },
+                    {
+                      "type": "null"
+                    }
+                  ]
+                },
+                "version": {
+                  "anyOf": [
+                    {
+                      "type": "string"
+                    },
+                    {
+                      "type": "null"
+                    }
+                  ]
+                }
+              },
+              "additionalProperties": false
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "phoneId": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "phoneNum": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        }
+      },
+      "additionalProperties": false
+    }
+  },
+  {
+    "name": "send-signin-request",
+    "description": "sendSigninRequest — auth operation from Frogne Hreyfill 3.8.3; static contract; live write execution unverified.",
+    "effect": "auth",
+    "method": "POST",
+    "path": "https://infinity.frogne.dk/isl/v1/auth/createuser",
+    "paramsSchema": {
+      "type": "object",
+      "properties": {},
+      "required": [],
+      "additionalProperties": false
+    },
+    "source": "dk.frogne.booking.infinity.data.network.api.FrogneAuthenticationApi.java",
+    "requestModel": "LoginRequest",
+    "coverage": "static-contract",
+    "authRequired": false,
+    "bodySchema": {
+      "type": "object",
+      "properties": {
+        "app": {
+          "anyOf": [
+            {
+              "type": "object",
+              "properties": {
+                "name": {
+                  "anyOf": [
+                    {
+                      "type": "string"
+                    },
+                    {
+                      "type": "null"
+                    }
+                  ]
+                },
+                "version": {
+                  "anyOf": [
+                    {
+                      "type": "string"
+                    },
+                    {
+                      "type": "null"
+                    }
+                  ]
+                }
+              },
+              "additionalProperties": false
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "email": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "firebaseToken": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "loginProvider": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "os": {
+          "anyOf": [
+            {
+              "type": "object",
+              "properties": {
+                "language": {
+                  "anyOf": [
+                    {
+                      "type": "string"
+                    },
+                    {
+                      "type": "null"
+                    }
+                  ]
+                },
+                "name": {
+                  "anyOf": [
+                    {
+                      "type": "string"
+                    },
+                    {
+                      "type": "null"
+                    }
+                  ]
+                },
+                "version": {
+                  "anyOf": [
+                    {
+                      "type": "string"
+                    },
+                    {
+                      "type": "null"
+                    }
+                  ]
+                }
+              },
+              "additionalProperties": false
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "phoneId": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "phoneNum": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        }
+      },
+      "additionalProperties": false
+    }
+  },
+  {
+    "name": "delete-payment",
+    "description": "deletePayment — write operation from Frogne Hreyfill 3.8.3; static contract; live write execution unverified.",
+    "effect": "write",
+    "method": "POST",
+    "path": "https://infinity.frogne.dk/isl/v1/userprofile/payment/delete/{id}",
+    "paramsSchema": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 512
+        }
+      },
+      "required": [
+        "id"
+      ],
+      "additionalProperties": false
+    },
+    "source": "dk.frogne.booking.infinity.data.network.api.UserProfileApi.java",
+    "requestModel": null,
+    "coverage": "static-contract",
+    "authRequired": true
+  },
+  {
+    "name": "delete-user",
+    "description": "deleteUser — write operation from Frogne Hreyfill 3.8.3; request model partially recovered.",
+    "effect": "write",
+    "method": "POST",
+    "path": "https://infinity.frogne.dk/isl/v1/userprofile/delete",
+    "paramsSchema": {
+      "type": "object",
+      "properties": {},
+      "required": [],
+      "additionalProperties": false
+    },
+    "source": "dk.frogne.booking.infinity.data.network.api.UserProfileApi.java",
+    "requestModel": "UserDeleteAttributes",
+    "coverage": "partial-model",
+    "authRequired": true,
+    "bodySchema": {
+      "type": "object",
+      "additionalProperties": true
+    }
+  },
+  {
+    "name": "get-user",
+    "description": "getUser — read operation from Frogne Hreyfill 3.8.3; read-only operation.",
+    "effect": "read",
+    "method": "GET",
+    "path": "https://infinity.frogne.dk/isl/v1/userprofile/get",
+    "paramsSchema": {
+      "type": "object",
+      "properties": {},
+      "required": [],
+      "additionalProperties": false
+    },
+    "source": "dk.frogne.booking.infinity.data.network.api.UserProfileApi.java",
+    "requestModel": null,
+    "coverage": "static-contract",
+    "authRequired": true
+  },
+  {
+    "name": "modify-payment",
+    "description": "modifyPayment — write operation from Frogne Hreyfill 3.8.3; request model partially recovered.",
+    "effect": "write",
+    "method": "POST",
+    "path": "https://infinity.frogne.dk/isl/v1/userprofile/payment/edit/{id}",
+    "paramsSchema": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 512
+        }
+      },
+      "required": [
+        "id"
+      ],
+      "additionalProperties": false
+    },
+    "source": "dk.frogne.booking.infinity.data.network.api.UserProfileApi.java",
+    "requestModel": "PaymentAttributes",
+    "coverage": "partial-model",
+    "authRequired": true,
+    "bodySchema": {
+      "type": "object",
+      "additionalProperties": true
+    }
+  },
+  {
+    "name": "set-favourite-address",
+    "description": "setFavouriteAddress — write operation from Frogne Hreyfill 3.8.3; static contract; live write execution unverified.",
+    "effect": "write",
+    "method": "POST",
+    "path": "https://infinity.frogne.dk/isl/v1/userprofile/address/set",
+    "paramsSchema": {
+      "type": "object",
+      "properties": {},
+      "required": [],
+      "additionalProperties": false
+    },
+    "source": "dk.frogne.booking.infinity.data.network.api.UserProfileApi.java",
+    "requestModel": "Address",
+    "coverage": "static-contract",
+    "authRequired": true,
+    "bodySchema": {
+      "type": "object",
+      "properties": {
+        "city": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "coord": {
+          "anyOf": [
+            {
+              "type": "array",
+              "items": {
+                "type": "number"
+              }
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "country": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "countryCode": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "flightId": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "houseNum": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "label": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "letter": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "poi": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "specialCaseComment": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "street": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "type": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "zipCode": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        }
+      },
+      "additionalProperties": false
+    }
+  },
+  {
+    "name": "set-user-data",
+    "description": "setUserData — write operation from Frogne Hreyfill 3.8.3; static contract; live write execution unverified.",
+    "effect": "write",
+    "method": "POST",
+    "path": "https://infinity.frogne.dk/isl/v1/userprofile/userdata/set",
+    "paramsSchema": {
+      "type": "object",
+      "properties": {},
+      "required": [],
+      "additionalProperties": false
+    },
+    "source": "dk.frogne.booking.infinity.data.network.api.UserProfileApi.java",
+    "requestModel": "UserSavedAttributes",
+    "coverage": "static-contract",
+    "authRequired": true,
+    "bodySchema": {
+      "type": "object",
+      "properties": {
+        "attributes": {
+          "anyOf": [
+            {
+              "type": "array",
+              "items": {
+                "type": "string"
+              }
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "bigCarSeats": {
+          "type": "integer"
+        }
+      },
+      "additionalProperties": false
+    }
+  },
+  {
+    "name": "update-attributes",
+    "description": "updateAttributes — write operation from Frogne Hreyfill 3.8.3; request model partially recovered.",
+    "effect": "write",
+    "method": "POST",
+    "path": "https://infinity.frogne.dk/isl/v1/userprofile/edit",
+    "paramsSchema": {
+      "type": "object",
+      "properties": {},
+      "required": [],
+      "additionalProperties": false
+    },
+    "source": "dk.frogne.booking.infinity.data.network.api.UserProfileApi.java",
+    "requestModel": "UpdateUserAttributes",
+    "coverage": "partial-model",
+    "authRequired": true,
+    "bodySchema": {
+      "type": "object",
+      "additionalProperties": true
+    }
+  },
+  {
+    "name": "update-phone-settings",
+    "description": "updatePhoneSettings — write operation from Frogne Hreyfill 3.8.3; request model partially recovered.",
+    "effect": "write",
+    "method": "POST",
+    "path": "https://infinity.frogne.dk/isl/v1/userprofile/init",
+    "paramsSchema": {
+      "type": "object",
+      "properties": {},
+      "required": [],
+      "additionalProperties": false
+    },
+    "source": "dk.frogne.booking.infinity.data.network.api.UserProfileApi.java",
+    "requestModel": "PhoneSettingsAttributes",
+    "coverage": "partial-model",
+    "authRequired": true,
+    "bodySchema": {
+      "type": "object",
+      "additionalProperties": true
+    }
+  },
+  {
+    "name": "send-sms-validation-request",
+    "description": "sendSmsValidationRequest — auth operation from Frogne Hreyfill 3.8.3; static contract; live write execution unverified.",
+    "effect": "auth",
+    "method": "POST",
+    "path": "https://infinity.frogne.dk/isl/v1/misc/sms/sendcode/{type}/{phoneNum}",
+    "paramsSchema": {
+      "type": "object",
+      "properties": {
+        "type": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 512
+        },
+        "phoneNum": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 512
+        }
+      },
+      "required": [
+        "type",
+        "phoneNum"
+      ],
+      "additionalProperties": false
+    },
+    "source": "dk.frogne.booking.infinity.data.network.api.SmsValidationApi.java",
+    "requestModel": null,
+    "coverage": "static-contract",
+    "authRequired": false
+  },
+  {
+    "name": "send-validationcode",
+    "description": "sendValidationcode — auth operation from Frogne Hreyfill 3.8.3; static contract; live write execution unverified.",
+    "effect": "auth",
+    "method": "GET",
+    "path": "https://infinity.frogne.dk/isl/v1/misc/sms/validatecode/{type}/{phoneNum}/{code}",
+    "paramsSchema": {
+      "type": "object",
+      "properties": {
+        "type": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 512
+        },
+        "phoneNum": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 512
+        },
+        "code": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 512
+        }
+      },
+      "required": [
+        "type",
+        "phoneNum",
+        "code"
+      ],
+      "additionalProperties": false
+    },
+    "source": "dk.frogne.booking.infinity.data.network.api.SmsValidationApi.java",
+    "requestModel": null,
+    "coverage": "static-contract",
+    "authRequired": false
+  },
+  {
+    "name": "get-walkthrough-screens-configuration",
+    "description": "getWalkthroughScreensConfiguration — read operation from Frogne Hreyfill 3.8.3; read-only operation.",
+    "effect": "read",
+    "method": "GET",
+    "path": "https://infinity.frogne.dk/isl/web/v1/walkthrough.json",
+    "paramsSchema": {
+      "type": "object",
+      "properties": {},
+      "required": [],
+      "additionalProperties": false
+    },
+    "source": "dk.frogne.booking.infinity.data.network.api.WalkthroughApi.java",
+    "requestModel": null,
+    "coverage": "static-contract",
+    "authRequired": false
+  },
+  {
+    "name": "get-driver-image",
+    "description": "getDriverImage — read operation from Frogne Hreyfill 3.8.3; read-only operation.",
+    "effect": "read",
+    "method": "GET",
+    "path": "https://infinity.frogne.dk/isl/v1/trip/driverimage/168x168/{orderId}",
+    "paramsSchema": {
+      "type": "object",
+      "properties": {
+        "orderId": {
+          "type": "integer",
+          "minimum": 1
+        }
+      },
+      "required": [
+        "orderId"
+      ],
+      "additionalProperties": false
+    },
+    "source": "dk.frogne.booking.infinity.data.network.api.TripApi.java",
+    "requestModel": null,
+    "coverage": "static-contract",
+    "authRequired": true,
+    "responseType": "binary"
+  },
+  {
+    "name": "get-trip-path",
+    "description": "getTripPath — read operation from Frogne Hreyfill 3.8.3; read-only operation.",
+    "effect": "read",
+    "method": "GET",
+    "path": "https://infinity.frogne.dk/isl/v1/trip/path/polyline/{orderId}",
+    "paramsSchema": {
+      "type": "object",
+      "properties": {
+        "orderId": {
+          "type": "integer",
+          "minimum": 1
+        }
+      },
+      "required": [
+        "orderId"
+      ],
+      "additionalProperties": false
+    },
+    "source": "dk.frogne.booking.infinity.data.network.api.TripApi.java",
+    "requestModel": null,
+    "coverage": "static-contract",
+    "authRequired": true
+  },
+  {
+    "name": "send-rating",
+    "description": "sendRating — write operation from Frogne Hreyfill 3.8.3; static contract; live write execution unverified.",
+    "effect": "write",
+    "method": "POST",
+    "path": "https://infinity.frogne.dk/isl/v1/trip/rate/{orderId}",
+    "paramsSchema": {
+      "type": "object",
+      "properties": {
+        "orderId": {
+          "type": "integer",
+          "minimum": 1
+        }
+      },
+      "required": [
+        "orderId"
+      ],
+      "additionalProperties": false
+    },
+    "source": "dk.frogne.booking.infinity.data.network.api.TripApi.java",
+    "requestModel": "TripRating",
+    "coverage": "static-contract",
+    "authRequired": true,
+    "bodySchema": {
+      "type": "object",
+      "properties": {
+        "rating": {
+          "type": "integer",
+          "minimum": 1,
+          "maximum": 5
+        },
+        "message": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "maxLength": 2000
+        }
+      },
+      "required": [
+        "rating"
+      ],
+      "additionalProperties": false
+    }
+  },
+  {
+    "name": "remove-companyprofile",
+    "description": "removeCompanyprofile — write operation from Frogne Hreyfill 3.8.3; static contract; live write execution unverified.",
+    "effect": "write",
+    "method": "POST",
+    "path": "https://infinity.frogne.dk/isl/v1/companyprofile/remove",
+    "paramsSchema": {
+      "type": "object",
+      "properties": {},
+      "required": [],
+      "additionalProperties": false
+    },
+    "source": "dk.frogne.booking.infinity.data.network.api.CompanyprofileApi.java",
+    "requestModel": null,
+    "coverage": "static-contract",
+    "authRequired": true
+  },
+  {
+    "name": "set-companyprofile",
+    "description": "setCompanyprofile — write operation from Frogne Hreyfill 3.8.3; static contract; live write execution unverified.",
+    "effect": "write",
+    "method": "POST",
+    "path": "https://infinity.frogne.dk/isl/v1/companyprofile/set",
+    "paramsSchema": {
+      "type": "object",
+      "properties": {},
+      "required": [],
+      "additionalProperties": false
+    },
+    "source": "dk.frogne.booking.infinity.data.network.api.CompanyprofileApi.java",
+    "requestModel": "SetCompanyAttributes",
+    "coverage": "static-contract",
+    "authRequired": true,
+    "bodySchema": {
+      "type": "object",
+      "properties": {
+        "firebaseToken": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "login": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "password": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "phoneId": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        }
+      },
+      "additionalProperties": false
+    }
+  },
+  {
+    "name": "nearby",
+    "description": "Bounded live nearby WebSocket feed; recovered static handshake and message shape.",
+    "effect": "read",
+    "method": "WS",
+    "path": "https://infinity.frogne.dk/isl/ws/v1/monitor-ws/nearme",
+    "paramsSchema": {
+      "type": "object",
+      "properties": {
+        "latitude": {
+          "type": "number",
+          "minimum": -90,
+          "maximum": 90
+        },
+        "longitude": {
+          "type": "number",
+          "minimum": -180,
+          "maximum": 180
+        }
+      },
+      "required": [
+        "latitude",
+        "longitude"
+      ],
+      "additionalProperties": false
+    },
+    "authRequired": true,
+    "responseType": "stream",
+    "coverage": "static-contract"
+  },
+  {
+    "name": "live",
+    "description": "Bounded live live WebSocket feed; recovered static handshake and message shape.",
+    "effect": "read",
+    "method": "WS",
+    "path": "https://infinity.frogne.dk/isl/ws/v1/monitor-ws/live/{orderId}",
+    "paramsSchema": {
+      "type": "object",
+      "properties": {
+        "orderId": {
+          "type": "integer",
+          "minimum": 1
+        }
+      },
+      "required": [
+        "orderId"
+      ],
+      "additionalProperties": false
+    },
+    "authRequired": true,
+    "responseType": "stream",
+    "coverage": "static-contract"
+  }
+]

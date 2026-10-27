@@ -1,0 +1,6 @@
+node_modules/
+hreyfill
+.private/
+.env
+*.log
+coverage/
