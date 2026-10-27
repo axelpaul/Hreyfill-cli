@@ -21,8 +21,8 @@
 ## Local verification
 
 - TypeScript strict typecheck passed.
-- 21 tests passed: transport guards, all write/auth previews, coordinate schemas, nullability/pickup-only handling, private auth storage, CLI parsing and MCP defaults.
-- Compiled stdio MCP initialize/list passed: 20 default tools; 40 with writes enabled. A cancellation preview via MCP performed no request.
+- Tests cover transport guards, all write/auth previews, coordinate schemas, nullability/pickup-only handling, private auth storage, CLI parsing and MCP defaults.
+- Compiled stdio MCP initialize/list checked separately: 20 default tools; 36 with writes enabled; four auth operations remain CLI-only. A cancellation preview with explicit confirm=false via MCP performed no request.
 
 ## Operation adapters
 

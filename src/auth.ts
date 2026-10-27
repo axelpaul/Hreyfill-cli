@@ -3,7 +3,7 @@ import { join } from 'node:path';
 import { homedir } from 'node:os';
 import { randomUUID } from 'node:crypto';
 export type Session = { accessToken: string; phoneId?: string; firebaseToken?: string };
-export function configDir(): string { return process.env.HREYFILL_CONFIG_DIR ?? join(process.env.XDG_CONFIG_HOME ?? join(homedir(), '.config'), 'hreyfill'); }
+export function configDir(): string { return process.env.HREYFILL_CONFIG_DIR ?? join(process.env.XDG_CONFIG_HOME ?? join(homedir(), '.config'), 'hreyfill-cli'); }
 export async function loadSession(): Promise<Session | null> {
   if (process.env.HREYFILL_ACCESS_TOKEN) return {accessToken:process.env.HREYFILL_ACCESS_TOKEN, phoneId:process.env.HREYFILL_PHONE_ID, firebaseToken:process.env.HREYFILL_FIREBASE_TOKEN};
   try {

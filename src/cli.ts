@@ -1,5 +1,6 @@
 import { readFile, writeFile } from 'node:fs/promises';
 import { OPERATIONS } from './operations';
+import { VERSION } from './version';
 import { Client, SafeError } from './client';
 import { importSession, sessionStatus, logout } from './auth';
 import { serveMcp } from './mcp';
@@ -31,18 +32,18 @@ async function run(argv: string[]): Promise<void> {
   else if (alias) { const subcommand = args.shift(); if (!subcommand || !alias[subcommand]) throw new SafeError('Unknown subcommand; run hreyfill help'); command = alias[subcommand]!; }
   if (command === 'help' || command === '--help') {
     if (args.length) throw new SafeError('Unexpected help arguments');
-    print({ name: 'hreyfill', version: '0.1.0', usage: 'hreyfill <operation> [--params JSON] [--data JSON|@file] [--yes] [--allow-auth] [--timeout SECONDS] [--output PATH]', aliases, commands: ['help', 'schema', 'doctor', 'version', 'serve', 'auth status', 'auth import --file PATH (or stdin)', 'auth logout'], operations: OPERATIONS.map(op => ({ name: op.name, description: op.description, effect: op.effect })) }); return;
+    print({ name: 'hreyfill', version: VERSION, usage: 'hreyfill <operation> [--params JSON] [--data JSON|@file] [--yes] [--allow-auth] [--timeout SECONDS] [--output PATH]', aliases, commands: ['help', 'schema', 'doctor', 'version', 'serve', 'auth status', 'auth import --file PATH (or stdin)', 'auth logout'], operations: OPERATIONS.map(op => ({ name: op.name, description: op.description, effect: op.effect })) }); return;
   }
-  if (command === 'version' || command === '--version') { if (args.length) throw new SafeError('Unexpected version arguments'); print({ version: '0.1.0' }); return; }
+  if (command === 'version' || command === '--version') { if (args.length) throw new SafeError('Unexpected version arguments'); if(command === '--version' && !argv.includes('--json'))process.stdout.write(`${VERSION}\n`);else print({ version: VERSION }); return; }
   if (command === 'schema') { if (args.length > 1) throw new SafeError('Expected at most one operation'); const op = args[0] ? OPERATIONS.find(op => op.name === args[0]) : undefined; if (args[0] && !op) throw new SafeError('Unknown operation'); print(op ?? OPERATIONS); return; }
-  if (command === 'doctor') { if (args.length) throw new SafeError('Unexpected doctor arguments'); print({ sessionStored: (await sessionStatus()).authenticated, version: '0.1.0', networkChecked: false }); return; }
+  if (command === 'doctor') { if (args.length) throw new SafeError('Unexpected doctor arguments'); print({ sessionStored: (await sessionStatus()).authenticated, version: VERSION, networkChecked: false }); return; }
   if (command === 'serve') { if (args.length) throw new SafeError('Unexpected serve arguments'); await serveMcp(); return; }
   if (command === 'auth') {
     const sub = args.shift();
     if (sub === 'status' || sub === 'logout') { if (args.length) throw new SafeError('Unexpected auth arguments'); print(sub === 'status' ? await sessionStatus() : await logout()); return; }
     if (sub === 'import') {
       if (args.length && (args.length !== 2 || args[0] !== '--file')) throw new SafeError('Usage: auth import [--file PATH]');
-      const input = await readFile(args.length ? args[1]! : '/dev/stdin', 'utf8'); print(await importSession(JSON.parse(input))); return;
+      const input = args.length ? await readFile(args[1]!, 'utf8') : await Bun.stdin.text(); print(await importSession(JSON.parse(input))); return;
     }
     throw new SafeError('Expected auth import, status, or logout');
   }

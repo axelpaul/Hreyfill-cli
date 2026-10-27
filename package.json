@@ -12,7 +12,8 @@
     "typecheck": "tsc --noEmit",
     "test": "bun test",
     "check": "bun run typecheck && bun test",
-    "verify:mcp": "bun scripts/verify-mcp.ts"
+    "verify:mcp": "bun scripts/verify-mcp.ts",
+    "verify:source-install": "bun scripts/verify-source-install.ts"
   },
   "dependencies": {
     "@modelcontextprotocol/sdk": "1.32.1",
@@ -29,5 +30,9 @@
   "homepage": "https://github.com/axelpaul/Hreyfill-cli#readme",
   "bugs": {
     "url": "https://github.com/axelpaul/Hreyfill-cli/issues"
+  },
+  "license": "MIT",
+  "engines": {
+    "bun": ">=1.3.13"
   }
 }

@@ -2,6 +2,7 @@ import { Server } from '@modelcontextprotocol/sdk/server/index.js';
 import { StdioServerTransport } from '@modelcontextprotocol/sdk/server/stdio.js';
 import { CallToolRequestSchema, ListToolsRequestSchema } from '@modelcontextprotocol/sdk/types.js';
 import { OPERATIONS } from './operations';
+import { VERSION } from './version';
 import { Client, SafeError } from './client';
 
 export function toolName(name: string): string { return `hreyfill_${name.replace(/[.-]/g, '_')}`; }
@@ -16,14 +17,13 @@ export function validateArguments(value: unknown): Record<string, unknown> {
 }
 
 export function createMcpServer(client = new Client(), enableWrites = process.env.HREYFILL_MCP_ENABLE_WRITES === '1'): Server {
-  const server = new Server({ name: 'hreyfill', version: '0.1.0' }, { capabilities: { tools: {} } });
-  const operations = OPERATIONS.filter(op => op.effect === 'read' || enableWrites);
+  const server = new Server({ name: 'hreyfill', version: VERSION }, { capabilities: { tools: {} } });
+  const operations = OPERATIONS.filter(op => op.effect === 'read' || (enableWrites && op.effect === 'write'));
   server.setRequestHandler(ListToolsRequestSchema, async () => ({ tools: operations.map(op => ({
     name: toolName(op.name), description: op.description,
-    inputSchema: { type: 'object' as const, additionalProperties: false, properties: {
+    inputSchema: { type: 'object' as const, additionalProperties: false, required: [...(op.effect === 'write' ? ['confirm'] : []), ...(op.bodySchema ? ['body'] : []), ...((op.paramsSchema.required as string[] | undefined)?.length ? ['params'] : [])], properties: {
       params: op.paramsSchema, ...(op.bodySchema ? { body: op.bodySchema } : {}),
       confirm: { type: 'boolean', description: 'Explicit approval for this write operation.' },
-      ...(op.effect === 'auth' ? { allowAuth: { type: 'boolean', description: 'Explicit approval to initiate authentication.' } } : {}),
       timeoutSeconds: { type: 'integer', minimum: 1, maximum: 30 },
     } }, annotations: { readOnlyHint: op.effect === 'read', destructiveHint: op.effect !== 'read', openWorldHint: true },
   })) }));
@@ -32,7 +32,8 @@ export function createMcpServer(client = new Client(), enableWrites = process.en
       const op = operations.find(candidate => toolName(candidate.name) === request.params.name);
       if (!op) throw new SafeError('Unknown or disabled tool');
       const args = validateArguments(request.params.arguments ?? {});
-      if ('allowAuth' in args && op.effect !== 'auth') throw new SafeError('allowAuth is only valid for authentication operations');
+      if(op.effect === 'write' && typeof args.confirm !== 'boolean')throw new SafeError('Write tools require confirm: false to preview or confirm: true to execute');
+      if ('allowAuth' in args) throw new SafeError('Authentication is CLI-only');
       if ('body' in args && !op.bodySchema) throw new SafeError('This operation does not accept a body');
       const result = await client.execute(op.name, args);
       return { content: [{ type: 'text' as const, text: JSON.stringify(result) }] };

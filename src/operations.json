@@ -1,7 +1,7 @@
 [
   {
     "name": "get-quote",
-    "description": "getQuote — read operation from Frogne Hreyfill 3.8.3; read-only operation.",
+    "description": "Calculate a taxi fare quote; does not book a ride or provide an arrival time.",
     "effect": "read",
     "method": "POST",
     "path": "https://infinity.frogne.dk/isl/v1/quote/get",
@@ -617,7 +617,7 @@
   },
   {
     "name": "cc-auth-failed",
-    "description": "ccAuthFailed — payment-flow operation from Frogne Hreyfill 3.8.3; static contract; live write execution unverified.",
+    "description": "Report a failed card authorization; confirm=true required. Payment flow unverified.",
     "effect": "write",
     "method": "POST",
     "path": "https://infinity.frogne.dk/isl/v1/payment/cc-authfail/{token}",
@@ -642,7 +642,7 @@
   },
   {
     "name": "cc-check-auth",
-    "description": "ccCheckAuth — payment-flow operation from Frogne Hreyfill 3.8.3; static contract; live write execution unverified.",
+    "description": "Check or finalize a card authorization; confirm=true required. Payment flow unverified.",
     "effect": "write",
     "method": "POST",
     "path": "https://infinity.frogne.dk/isl/v1/payment/cc-checkauth/{token}",
@@ -667,7 +667,7 @@
   },
   {
     "name": "get-payment-windows",
-    "description": "getPaymentWindows — payment-flow operation from Frogne Hreyfill 3.8.3; static contract; live write execution unverified.",
+    "description": "Start card enrollment; confirm=true required. Browser handoff is not implemented.",
     "effect": "write",
     "method": "POST",
     "path": "https://infinity.frogne.dk/isl/v1/payment/cc-paymentwindow",
@@ -684,7 +684,7 @@
   },
   {
     "name": "get-receipt",
-    "description": "getReceipt — read operation from Frogne Hreyfill 3.8.3; read-only operation.",
+    "description": "Download the PDF receipt for a booking.",
     "effect": "read",
     "method": "GET",
     "path": "https://infinity.frogne.dk/isl/v1/payment/receipt/pdf/{orderId}",
@@ -709,7 +709,7 @@
   },
   {
     "name": "cancel-order",
-    "description": "cancelOrder — write operation from Frogne Hreyfill 3.8.3; static contract; live write execution unverified.",
+    "description": "Preview or cancel a booking; execution requires confirm=true. Not ride-tested.",
     "effect": "write",
     "method": "POST",
     "path": "https://infinity.frogne.dk/isl/v1/order/cancel/{orderId}",
@@ -733,7 +733,7 @@
   },
   {
     "name": "create-order",
-    "description": "createOrder — write operation from Frogne Hreyfill 3.8.3; static contract; live write execution unverified.",
+    "description": "Preview or create a taxi booking; execution requires confirm=true. Not ride-tested.",
     "effect": "write",
     "method": "POST",
     "path": "https://infinity.frogne.dk/isl/v1/order/create",
@@ -1267,7 +1267,7 @@
   },
   {
     "name": "get-most-recent-order-today",
-    "description": "getMostRecentOrderToday — read operation from Frogne Hreyfill 3.8.3; read-only operation.",
+    "description": "Show the most recent booking from today.",
     "effect": "read",
     "method": "GET",
     "path": "https://infinity.frogne.dk/isl/v1/order/search/all?days=1&start=0&max=1",
@@ -1284,7 +1284,7 @@
   },
   {
     "name": "get-order",
-    "description": "getOrder — read operation from Frogne Hreyfill 3.8.3; read-only operation.",
+    "description": "Show the details of one booking.",
     "effect": "read",
     "method": "GET",
     "path": "https://infinity.frogne.dk/isl/v1/order/get/{orderId}",
@@ -1308,7 +1308,7 @@
   },
   {
     "name": "get-order-history",
-    "description": "getOrderHistory — read operation from Frogne Hreyfill 3.8.3; read-only operation.",
+    "description": "List past bookings, with a maximum result count.",
     "effect": "read",
     "method": "GET",
     "path": "https://infinity.frogne.dk/isl/v1/order/search/all",
@@ -1331,7 +1331,7 @@
   },
   {
     "name": "get-order-upcoming",
-    "description": "getOrderUpcoming — read operation from Frogne Hreyfill 3.8.3; read-only operation.",
+    "description": "List upcoming bookings.",
     "effect": "read",
     "method": "GET",
     "path": "https://infinity.frogne.dk/isl/v1/order/search/upcoming",
@@ -1348,7 +1348,7 @@
   },
   {
     "name": "remove-order",
-    "description": "removeOrder — write operation from Frogne Hreyfill 3.8.3; static contract; live write execution unverified.",
+    "description": "Preview or remove a booking from history; requires confirm=true. Not ride-tested.",
     "effect": "write",
     "method": "POST",
     "path": "https://infinity.frogne.dk/isl/v1/order/remove/{orderId}",
@@ -1372,7 +1372,7 @@
   },
   {
     "name": "get-address",
-    "description": "getAddress — read operation from Frogne Hreyfill 3.8.3; read-only operation.",
+    "description": "Look up an address from coordinates using your own Google Maps key.",
     "effect": "read",
     "method": "GET",
     "path": "https://maps.googleapis.com/maps/api/geocode/json",
@@ -1400,7 +1400,7 @@
   },
   {
     "name": "get-address-details",
-    "description": "getAddressDetails — read operation from Frogne Hreyfill 3.8.3; read-only operation.",
+    "description": "Look up address details for a Google place ID using your own key.",
     "effect": "read",
     "method": "GET",
     "path": "https://maps.googleapis.com/maps/api/geocode/json",
@@ -1428,7 +1428,7 @@
   },
   {
     "name": "get-autocompleted-addresses",
-    "description": "getAutocompletedAddresses — read operation from Frogne Hreyfill 3.8.3; read-only operation.",
+    "description": "Find matching places using your own Google Maps key.",
     "effect": "read",
     "method": "GET",
     "path": "https://maps.googleapis.com/maps/api/place/autocomplete/json",
@@ -1468,7 +1468,7 @@
   },
   {
     "name": "get-autocompleted-addresses-strict",
-    "description": "getAutocompletedAddressesStrict — read operation from Frogne Hreyfill 3.8.3; read-only operation.",
+    "description": "Find matching places within a search area using your own Google Maps key.",
     "effect": "read",
     "method": "GET",
     "path": "https://maps.googleapis.com/maps/api/place/autocomplete/json",
@@ -1512,7 +1512,7 @@
   },
   {
     "name": "get-directions",
-    "description": "getDirections — read operation from Frogne Hreyfill 3.8.3; read-only operation.",
+    "description": "Get driving directions using your own Google Maps key.",
     "effect": "read",
     "method": "GET",
     "path": "https://maps.googleapis.com/maps/api/directions/json",
@@ -1544,7 +1544,7 @@
   },
   {
     "name": "get-places-extra-details",
-    "description": "getPlacesExtraDetails — read operation from Frogne Hreyfill 3.8.3; read-only operation.",
+    "description": "Look up details of a Google place using your own key.",
     "effect": "read",
     "method": "GET",
     "path": "https://maps.googleapis.com/maps/api/place/details/json",
@@ -1572,7 +1572,7 @@
   },
   {
     "name": "get-call-list",
-    "description": "getCallList — read operation from Frogne Hreyfill 3.8.3; read-only operation.",
+    "description": "List taxi service contact numbers; no login required.",
     "effect": "read",
     "method": "GET",
     "path": "https://infinity.frogne.dk/isl/web/v1/call_list.json",
@@ -1589,7 +1589,7 @@
   },
   {
     "name": "get-transportation-options",
-    "description": "getTransportationOptions — read operation from Frogne Hreyfill 3.8.3; read-only operation.",
+    "description": "List vehicle and journey options; no login required.",
     "effect": "read",
     "method": "GET",
     "path": "https://infinity.frogne.dk/isl/web/v1/attributes_list.json",
@@ -1606,7 +1606,7 @@
   },
   {
     "name": "send-login-request",
-    "description": "sendLoginRequest — auth operation from Frogne Hreyfill 3.8.3; static contract; live write execution unverified.",
+    "description": "CLI-only: authenticate with valid device and Firebase context; fresh login unverified.",
     "effect": "auth",
     "method": "POST",
     "path": "https://infinity.frogne.dk/isl/v1/auth/login",
@@ -1755,7 +1755,7 @@
   },
   {
     "name": "send-signin-request",
-    "description": "sendSigninRequest — auth operation from Frogne Hreyfill 3.8.3; static contract; live write execution unverified.",
+    "description": "CLI-only: create an account with valid device and Firebase context; unverified.",
     "effect": "auth",
     "method": "POST",
     "path": "https://infinity.frogne.dk/isl/v1/auth/createuser",
@@ -1904,7 +1904,7 @@
   },
   {
     "name": "delete-payment",
-    "description": "deletePayment — write operation from Frogne Hreyfill 3.8.3; static contract; live write execution unverified.",
+    "description": "Preview or delete a saved payment method; requires confirm=true. Untested live.",
     "effect": "write",
     "method": "POST",
     "path": "https://infinity.frogne.dk/isl/v1/userprofile/payment/delete/{id}",
@@ -1929,7 +1929,7 @@
   },
   {
     "name": "delete-user",
-    "description": "deleteUser — write operation from Frogne Hreyfill 3.8.3; request model partially recovered.",
+    "description": "Preview or delete the account; requires confirm=true. Partial request schema; unverified.",
     "effect": "write",
     "method": "POST",
     "path": "https://infinity.frogne.dk/isl/v1/userprofile/delete",
@@ -1950,7 +1950,7 @@
   },
   {
     "name": "get-user",
-    "description": "getUser — read operation from Frogne Hreyfill 3.8.3; read-only operation.",
+    "description": "Show the signed-in user profile.",
     "effect": "read",
     "method": "GET",
     "path": "https://infinity.frogne.dk/isl/v1/userprofile/get",
@@ -1967,7 +1967,7 @@
   },
   {
     "name": "modify-payment",
-    "description": "modifyPayment — write operation from Frogne Hreyfill 3.8.3; request model partially recovered.",
+    "description": "Preview or edit a saved payment method; confirm=true required. Partial schema.",
     "effect": "write",
     "method": "POST",
     "path": "https://infinity.frogne.dk/isl/v1/userprofile/payment/edit/{id}",
@@ -1996,7 +1996,7 @@
   },
   {
     "name": "set-favourite-address",
-    "description": "setFavouriteAddress — write operation from Frogne Hreyfill 3.8.3; static contract; live write execution unverified.",
+    "description": "Preview or set a favourite address; confirm=true required. Untested live.",
     "effect": "write",
     "method": "POST",
     "path": "https://infinity.frogne.dk/isl/v1/userprofile/address/set",
@@ -2152,7 +2152,7 @@
   },
   {
     "name": "set-user-data",
-    "description": "setUserData — write operation from Frogne Hreyfill 3.8.3; static contract; live write execution unverified.",
+    "description": "Preview or change saved vehicle preferences; confirm=true required. Untested live.",
     "effect": "write",
     "method": "POST",
     "path": "https://infinity.frogne.dk/isl/v1/userprofile/userdata/set",
@@ -2191,7 +2191,7 @@
   },
   {
     "name": "update-attributes",
-    "description": "updateAttributes — write operation from Frogne Hreyfill 3.8.3; request model partially recovered.",
+    "description": "Preview or edit the user profile; confirm=true required. Partial request schema.",
     "effect": "write",
     "method": "POST",
     "path": "https://infinity.frogne.dk/isl/v1/userprofile/edit",
@@ -2212,7 +2212,7 @@
   },
   {
     "name": "update-phone-settings",
-    "description": "updatePhoneSettings — write operation from Frogne Hreyfill 3.8.3; request model partially recovered.",
+    "description": "Preview or initialize device settings; confirm=true required. Partial schema.",
     "effect": "write",
     "method": "POST",
     "path": "https://infinity.frogne.dk/isl/v1/userprofile/init",
@@ -2233,7 +2233,7 @@
   },
   {
     "name": "send-sms-validation-request",
-    "description": "sendSmsValidationRequest — auth operation from Frogne Hreyfill 3.8.3; static contract; live write execution unverified.",
+    "description": "CLI-only: request an SMS code; requires explicit auth opt-in and confirmation.",
     "effect": "auth",
     "method": "POST",
     "path": "https://infinity.frogne.dk/isl/v1/misc/sms/sendcode/{type}/{phoneNum}",
@@ -2264,7 +2264,7 @@
   },
   {
     "name": "send-validationcode",
-    "description": "sendValidationcode — auth operation from Frogne Hreyfill 3.8.3; static contract; live write execution unverified.",
+    "description": "CLI-only: validate an SMS code; requires explicit auth opt-in and confirmation.",
     "effect": "auth",
     "method": "GET",
     "path": "https://infinity.frogne.dk/isl/v1/misc/sms/validatecode/{type}/{phoneNum}/{code}",
@@ -2301,7 +2301,7 @@
   },
   {
     "name": "get-walkthrough-screens-configuration",
-    "description": "getWalkthroughScreensConfiguration — read operation from Frogne Hreyfill 3.8.3; read-only operation.",
+    "description": "Read the service’s introductory information; no login required.",
     "effect": "read",
     "method": "GET",
     "path": "https://infinity.frogne.dk/isl/web/v1/walkthrough.json",
@@ -2318,7 +2318,7 @@
   },
   {
     "name": "get-driver-image",
-    "description": "getDriverImage — read operation from Frogne Hreyfill 3.8.3; read-only operation.",
+    "description": "Download the driver image for a booking.",
     "effect": "read",
     "method": "GET",
     "path": "https://infinity.frogne.dk/isl/v1/trip/driverimage/168x168/{orderId}",
@@ -2343,7 +2343,7 @@
   },
   {
     "name": "get-trip-path",
-    "description": "getTripPath — read operation from Frogne Hreyfill 3.8.3; read-only operation.",
+    "description": "Get the recorded route for a booking.",
     "effect": "read",
     "method": "GET",
     "path": "https://infinity.frogne.dk/isl/v1/trip/path/polyline/{orderId}",
@@ -2367,7 +2367,7 @@
   },
   {
     "name": "send-rating",
-    "description": "sendRating — write operation from Frogne Hreyfill 3.8.3; static contract; live write execution unverified.",
+    "description": "Preview or submit a trip rating; confirm=true required. Not ride-tested.",
     "effect": "write",
     "method": "POST",
     "path": "https://infinity.frogne.dk/isl/v1/trip/rate/{orderId}",
@@ -2412,7 +2412,7 @@
   },
   {
     "name": "remove-companyprofile",
-    "description": "removeCompanyprofile — write operation from Frogne Hreyfill 3.8.3; static contract; live write execution unverified.",
+    "description": "Preview or remove a company account link; confirm=true required. Untested live.",
     "effect": "write",
     "method": "POST",
     "path": "https://infinity.frogne.dk/isl/v1/companyprofile/remove",
@@ -2429,7 +2429,7 @@
   },
   {
     "name": "set-companyprofile",
-    "description": "setCompanyprofile — write operation from Frogne Hreyfill 3.8.3; static contract; live write execution unverified.",
+    "description": "Preview or link a company account; confirm=true required. Untested live.",
     "effect": "write",
     "method": "POST",
     "path": "https://infinity.frogne.dk/isl/v1/companyprofile/set",
@@ -2492,7 +2492,7 @@
   },
   {
     "name": "nearby",
-    "description": "Bounded live nearby WebSocket feed; recovered static handshake and message shape.",
+    "description": "Watch nearby taxi positions for a bounded interval.",
     "effect": "read",
     "method": "WS",
     "path": "https://infinity.frogne.dk/isl/ws/v1/monitor-ws/nearme",
@@ -2522,7 +2522,7 @@
   },
   {
     "name": "live",
-    "description": "Bounded live live WebSocket feed; recovered static handshake and message shape.",
+    "description": "Watch a booking’s live status for a bounded interval. Not ride-tested.",
     "effect": "read",
     "method": "WS",
     "path": "https://infinity.frogne.dk/isl/ws/v1/monitor-ws/live/{orderId}",

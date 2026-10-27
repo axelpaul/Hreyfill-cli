@@ -1,3 +1,4 @@
+// Synthetic fixtures only; no captured personal data or live service writes.
 import { describe, expect, test } from 'bun:test';
 import { createMcpServer, toolName, validateArguments } from '../src/mcp';
 import { Client as ServiceClient } from '../src/client';

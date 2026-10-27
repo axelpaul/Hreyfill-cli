@@ -1,0 +1,261 @@
+{
+  "$schema": "https://mcp.axelpaul.is/catalog.schema.json",
+  "id": "hreyfill",
+  "repo": "axelpaul/Hreyfill-cli",
+  "name": "Hreyfill",
+  "service": "Hreyfill",
+  "serviceUrl": "https://www.hreyfill.is",
+  "tagline": "Taxi quotes, nearby cars and bookings with Hreyfill",
+  "description": "Check taxi prices, nearby cars and your bookings with your existing Hreyfill app login. You can also prepare bookings and cancellations, but these actions have not yet been tested with a real booking.",
+  "examples": [
+    "How much would this taxi journey cost?",
+    "What bookings do I have coming up?",
+    "Are there any taxis near my pickup point?"
+  ],
+  "category": "Transport & energy",
+  "auth": "none for service information; phone (SMS code in the Hreyfill app) for quotes and bookings, using an imported session",
+  "binaries": true,
+  "tools": [
+    {
+      "name": "hreyfill_get_quote",
+      "write": false,
+      "description": "Calculate a taxi fare quote; does not book a ride or provide an arrival time."
+    },
+    {
+      "name": "hreyfill_cc_auth_failed",
+      "write": true,
+      "description": "Report a failed card authorization; confirm=true required. Payment flow unverified."
+    },
+    {
+      "name": "hreyfill_cc_check_auth",
+      "write": true,
+      "description": "Check or finalize a card authorization; confirm=true required. Payment flow unverified."
+    },
+    {
+      "name": "hreyfill_get_payment_windows",
+      "write": true,
+      "description": "Start card enrollment; confirm=true required. Browser handoff is not implemented."
+    },
+    {
+      "name": "hreyfill_get_receipt",
+      "write": false,
+      "description": "Download the PDF receipt for a booking."
+    },
+    {
+      "name": "hreyfill_cancel_order",
+      "write": true,
+      "description": "Preview or cancel a booking; execution requires confirm=true. Not ride-tested."
+    },
+    {
+      "name": "hreyfill_create_order",
+      "write": true,
+      "description": "Preview or create a taxi booking; execution requires confirm=true. Not ride-tested."
+    },
+    {
+      "name": "hreyfill_get_most_recent_order_today",
+      "write": false,
+      "description": "Show the most recent booking from today."
+    },
+    {
+      "name": "hreyfill_get_order",
+      "write": false,
+      "description": "Show the details of one booking."
+    },
+    {
+      "name": "hreyfill_get_order_history",
+      "write": false,
+      "description": "List past bookings, with a maximum result count."
+    },
+    {
+      "name": "hreyfill_get_order_upcoming",
+      "write": false,
+      "description": "List upcoming bookings."
+    },
+    {
+      "name": "hreyfill_remove_order",
+      "write": true,
+      "description": "Preview or remove a booking from history; requires confirm=true. Not ride-tested."
+    },
+    {
+      "name": "hreyfill_get_address",
+      "write": false,
+      "description": "Look up an address from coordinates using your own Google Maps key."
+    },
+    {
+      "name": "hreyfill_get_address_details",
+      "write": false,
+      "description": "Look up address details for a Google place ID using your own key."
+    },
+    {
+      "name": "hreyfill_get_autocompleted_addresses",
+      "write": false,
+      "description": "Find matching places using your own Google Maps key."
+    },
+    {
+      "name": "hreyfill_get_autocompleted_addresses_strict",
+      "write": false,
+      "description": "Find matching places within a search area using your own Google Maps key."
+    },
+    {
+      "name": "hreyfill_get_directions",
+      "write": false,
+      "description": "Get driving directions using your own Google Maps key."
+    },
+    {
+      "name": "hreyfill_get_places_extra_details",
+      "write": false,
+      "description": "Look up details of a Google place using your own key."
+    },
+    {
+      "name": "hreyfill_get_call_list",
+      "write": false,
+      "description": "List taxi service contact numbers; no login required."
+    },
+    {
+      "name": "hreyfill_get_transportation_options",
+      "write": false,
+      "description": "List vehicle and journey options; no login required."
+    },
+    {
+      "name": "hreyfill_delete_payment",
+      "write": true,
+      "description": "Preview or delete a saved payment method; requires confirm=true. Untested live."
+    },
+    {
+      "name": "hreyfill_delete_user",
+      "write": true,
+      "description": "Preview or delete the account; requires confirm=true. Partial request schema; unverified."
+    },
+    {
+      "name": "hreyfill_get_user",
+      "write": false,
+      "description": "Show the signed-in user profile."
+    },
+    {
+      "name": "hreyfill_modify_payment",
+      "write": true,
+      "description": "Preview or edit a saved payment method; confirm=true required. Partial schema."
+    },
+    {
+      "name": "hreyfill_set_favourite_address",
+      "write": true,
+      "description": "Preview or set a favourite address; confirm=true required. Untested live."
+    },
+    {
+      "name": "hreyfill_set_user_data",
+      "write": true,
+      "description": "Preview or change saved vehicle preferences; confirm=true required. Untested live."
+    },
+    {
+      "name": "hreyfill_update_attributes",
+      "write": true,
+      "description": "Preview or edit the user profile; confirm=true required. Partial request schema."
+    },
+    {
+      "name": "hreyfill_update_phone_settings",
+      "write": true,
+      "description": "Preview or initialize device settings; confirm=true required. Partial schema."
+    },
+    {
+      "name": "hreyfill_get_walkthrough_screens_configuration",
+      "write": false,
+      "description": "Read the service’s introductory information; no login required."
+    },
+    {
+      "name": "hreyfill_get_driver_image",
+      "write": false,
+      "description": "Download the driver image for a booking."
+    },
+    {
+      "name": "hreyfill_get_trip_path",
+      "write": false,
+      "description": "Get the recorded route for a booking."
+    },
+    {
+      "name": "hreyfill_send_rating",
+      "write": true,
+      "description": "Preview or submit a trip rating; confirm=true required. Not ride-tested."
+    },
+    {
+      "name": "hreyfill_remove_companyprofile",
+      "write": true,
+      "description": "Preview or remove a company account link; confirm=true required. Untested live."
+    },
+    {
+      "name": "hreyfill_set_companyprofile",
+      "write": true,
+      "description": "Preview or link a company account; confirm=true required. Untested live."
+    },
+    {
+      "name": "hreyfill_nearby",
+      "write": false,
+      "description": "Watch nearby taxi positions for a bounded interval."
+    },
+    {
+      "name": "hreyfill_live",
+      "write": false,
+      "description": "Watch a booking’s live status for a bounded interval. Not ride-tested."
+    }
+  ],
+  "writesEnvVar": "HREYFILL_MCP_ENABLE_WRITES",
+  "commands": [
+    "hreyfill --version",
+    "hreyfill help",
+    "hreyfill doctor",
+    "hreyfill auth import --file <session.json>",
+    "hreyfill orders upcoming",
+    "hreyfill orders history --params '{\"max\":10}'",
+    "hreyfill profile get",
+    "hreyfill contacts",
+    "hreyfill transport-options",
+    "hreyfill quote --data @quote.json",
+    "hreyfill nearby --params <coordinates-json> --timeout 3",
+    "hreyfill live --params <order-json> --timeout 10",
+    "hreyfill receipt --params <order-json> --output receipt.pdf",
+    "hreyfill orders create --data @booking.json",
+    "hreyfill orders cancel --params <order-json>",
+    "hreyfill schema",
+    "hreyfill serve"
+  ],
+  "envVars": [
+    {
+      "name": "HREYFILL_CONFIG_DIR",
+      "description": "Override the session directory (default $XDG_CONFIG_HOME/hreyfill-cli or ~/.config/hreyfill-cli)"
+    },
+    {
+      "name": "HREYFILL_ACCESS_TOKEN",
+      "description": "Use an existing Frogne session token instead of the stored session"
+    },
+    {
+      "name": "HREYFILL_PHONE_ID",
+      "description": "Device identity for the imported session; needed for quote and booking requests"
+    },
+    {
+      "name": "HREYFILL_FIREBASE_TOKEN",
+      "description": "Existing Firebase context for requests that require it; no automatic refresh"
+    },
+    {
+      "name": "HREYFILL_GOOGLE_API_KEY",
+      "description": "Your own Google Maps key for optional address and directions tools; may incur charges"
+    },
+    {
+      "name": "HREYFILL_MCP_ENABLE_WRITES",
+      "description": "Set to 1 to expose MCP write tools; each call still requires explicit confirmation. Login stays CLI-only."
+    },
+    {
+      "name": "XDG_CONFIG_HOME",
+      "description": "Base configuration directory (default ~/.config)"
+    }
+  ],
+  "is": {
+    "tagline": "Verð fyrir leigubílaferðir, bílar í nágrenninu og bókanir hjá Hreyfli",
+    "description": "Skoðaðu verð fyrir ferð, leigubíla í nágrenninu og bókanirnar þínar með innskráningu úr Hreyfilsappinu. Þú getur líka undirbúið bókanir og afbókanir, en þær aðgerðir hafa ekki enn verið prófaðar með raunverulegri bókun.",
+    "examples": [
+      "Hvað myndi þessi leigubílaferð kosta?",
+      "Hvaða ferðir á ég bókaðar fram undan?",
+      "Eru leigubílar nálægt mér?"
+    ],
+    "requires": "Bun 1.3.13 eða nýrra"
+  },
+  "requires": "Bun 1.3.13 or newer"
+}

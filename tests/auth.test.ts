@@ -1,3 +1,4 @@
+// Synthetic fixtures only; no captured personal data or live service writes.
 import {test,expect} from 'bun:test';
 import {mkdtemp,rm,stat,symlink,writeFile} from 'node:fs/promises';
 import {tmpdir} from 'node:os';import {join} from 'node:path';

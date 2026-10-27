@@ -4,3 +4,4 @@ hreyfill
 .env
 *.log
 coverage/
+dist/
